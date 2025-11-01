@@ -51,6 +51,7 @@
       z-index: 1;
     }
 
+    /* Base button style */
     a.button {
       position: relative;
       display: inline-block;
@@ -63,19 +64,6 @@
       overflow: hidden;
       transition: 0.3s;
       backdrop-filter: blur(3px);
-    }
-
-    /* YouTube-specific style */
-    a.youtube {
-      color: #ff4b4b;
-      border-color: #ff4b4b;
-    }
-
-    a.youtube:hover {
-      background: #ff4b4b;
-      color: #fff;
-      box-shadow: 0 0 25px #ff4b4b, 0 0 50px #ff4b4b;
-      transform: translateY(-3px);
     }
 
     a.button::before {
@@ -100,6 +88,31 @@
       transform: translateY(-3px);
     }
 
+    /* About Me button - dark blue theme */
+    a.about {
+      color: #1a4fff;
+      border-color: #1a4fff;
+    }
+
+    a.about:hover {
+      background: #1a4fff;
+      color: #fff;
+      box-shadow: 0 0 25px #1a4fff, 0 0 50px #1a4fff;
+    }
+
+    /* YouTube button - red theme */
+    a.youtube {
+      color: #ff4b4b;
+      border-color: #ff4b4b;
+    }
+
+    a.youtube:hover {
+      background: #ff0000;
+      color: #fff;
+      box-shadow: 0 0 25px #ff0000, 0 0 50px #ff0000;
+      transform: translateY(-3px);
+    }
+
     footer {
       position: absolute;
       bottom: 20px;
@@ -114,7 +127,7 @@
   <h1>Welcome to Leon's Homepage</h1>
 
   <div class="button-container">
-    <a href="about.html" class="button">About Me</a>
+    <a href="about.html" class="button about">About Me</a>
     <a href="projects.html" class="button">Projects</a>
     <a href="contact.html" class="button">Contact</a>
     <!-- YouTube button -->
