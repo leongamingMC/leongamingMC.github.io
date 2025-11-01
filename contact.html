@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Leon</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #001f3f, #0074d9, #00d4ff, #2c3e50);
+      background-size: 400% 400%;
+      animation: gradientShift 12s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 3.5em;
+      color: #00eaff;
+      text-shadow: 0 0 15px #00eaff, 0 0 30px #00eaff;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 1.5em;
+      color: #c0f8ff;
+      margin-bottom: 20px;
+    }
+
+    .contact-info {
+      font-size: 1.4em;
+      color: #00ff55;
+      margin-top: 10px;
+      text-shadow: 0 0 10px #00ff55;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 15px 40px;
+      font-size: 1.2em;
+      color: #00eaff;
+      text-decoration: none;
+      border: 2px solid #00eaff;
+      border-radius: 50px;
+      margin-top: 30px;
+      transition: 0.3s;
+    }
+
+    a.button:hover {
+      background: #00eaff;
+      color: #002233;
+      box-shadow: 0 0 25px #00eaff, 0 0 50px #00eaff;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+  <h1>Contact Leon</h1>
+  <p>Hi! Trying to contact Leon? Here are some ways:</p>
+  <div class="contact-info">
+    Discord user (1): leonvr10<br>
+    Discord user (2): leongaming10
+  </div>
+
+  <a href="index.html" class="button">Back to Homepage</a>
+</body>
+</html>
