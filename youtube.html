@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leon's YouTube</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ff0000, #ff5555, #ff2222, #cc0000);
+      background-size: 400% 400%;
+      animation: youtubeGradient 10s ease infinite;
+      color: #002233; /* Dark blue text */
+    }
+
+    @keyframes youtubeGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #002233; /* Dark blue */
+      text-shadow: 0 0 10px #002233;
+      margin-bottom: 30px;
+    }
+
+    a.youtube-link {
+      font-size: 1.5em;
+      color: #002233; /* Dark blue */
+      text-decoration: none;
+      border: 2px solid #ff0000;
+      padding: 12px 30px;
+      border-radius: 50px;
+      transition: 0.3s;
+      background: rgba(255, 255, 255, 0.05);
+      text-shadow: 0 0 5px #002233;
+    }
+
+    a.youtube-link:hover {
+      background: #ff0000;
+      color: #ffffff;
+      box-shadow: 0 0 25px #ff0000, 0 0 50px #ff5555;
+      transform: translateY(-3px);
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 12px 30px;
+      font-size: 1.2em;
+      color: #002233;
+      text-decoration: none;
+      border: 2px solid #002233;
+      border-radius: 50px;
+      margin-top: 25px;
+      transition: 0.3s;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    a.button:hover {
+      background: #002233;
+      color: #ffffff;
+      box-shadow: 0 0 15px #002233;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+  <h1>Leon's Content</h1>
+
+  <a class="youtube-link" href="https://www.youtube.com/@leongaming_MC" target="_blank">
+    Visit Leon's YouTube Channel
+  </a>
+
+  <a href="index.html" class="button">Back to Homepage</a>
+</body>
+</html>
 
