@@ -3,15 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leon's Homepage</title>
+  <title>Contact Leon</title>
   <style>
-    /* Reset default browser styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
       font-family: 'Poppins', sans-serif;
       height: 100vh;
@@ -19,16 +12,15 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
       text-align: center;
-      color: #fff;
-      position: relative;
+      margin: 0;
+      padding: 0;
       background: linear-gradient(135deg, #001f3f, #0074d9, #00d4ff, #2c3e50);
       background-size: 400% 400%;
       animation: gradientShift 12s ease infinite;
+      color: #fff;
     }
 
-    /* Animated gradient background */
     @keyframes gradientShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -36,49 +28,35 @@
     }
 
     h1 {
-      font-size: 4em; /* Increased from 3em */
-      margin-bottom: 40px; /* Slightly more space below */
+      font-size: 3.5em;
       color: #00eaff;
-      text-shadow: 0 0 20px #00eaff, 0 0 40px #00eaff;
-      z-index: 1;
+      text-shadow: 0 0 15px #00eaff, 0 0 30px #00eaff;
+      margin-bottom: 30px;
     }
 
-    .button-container {
-      display: flex;
-      gap: 25px; /* Slightly more spacing */
-      flex-wrap: wrap;
-      justify-content: center;
-      z-index: 1;
+    p {
+      font-size: 1.5em;
+      color: #c0f8ff;
+      margin-bottom: 20px;
     }
 
-    /* Base button style */
+    .contact-info {
+      font-size: 1.4em;
+      color: #00ff55;
+      margin-top: 10px;
+      text-shadow: 0 0 10px #00ff55;
+    }
+
     a.button {
-      position: relative;
       display: inline-block;
-      padding: 20px 50px; /* Increased from 15px 40px */
-      font-size: 1.4em; /* Increased from 1.2em */
+      padding: 15px 40px;
+      font-size: 1.2em;
       color: #00eaff;
       text-decoration: none;
       border: 2px solid #00eaff;
       border-radius: 50px;
-      overflow: hidden;
+      margin-top: 30px;
       transition: 0.3s;
-      backdrop-filter: blur(3px);
-    }
-
-    a.button::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(0, 234, 255, 0.4), transparent);
-      transition: all 0.5s;
-    }
-
-    a.button:hover::before {
-      left: 100%;
     }
 
     a.button:hover {
@@ -87,65 +65,16 @@
       box-shadow: 0 0 25px #00eaff, 0 0 50px #00eaff;
       transform: translateY(-3px);
     }
-
-    /* About Me button - dark blue theme */
-    a.about {
-      color: #1a4fff;
-      border-color: #1a4fff;
-    }
-
-    a.about:hover {
-      background: #1a4fff;
-      color: #fff;
-      box-shadow: 0 0 25px #1a4fff, 0 0 50px #1a4fff;
-    }
-
-    /* YouTube button - red theme */
-    a.youtube {
-      color: #ff4b4b;
-      border-color: #ff4b4b;
-    }
-
-    a.youtube:hover {
-      background: #ff0000;
-      color: #fff;
-      box-shadow: 0 0 25px #ff0000, 0 0 50px #ff0000;
-      transform: translateY(-3px);
-    }
-
-    /* Contact button - neon green theme */
-    a.contact {
-      color: #00ff55;
-      border-color: #00ff55;
-    }
-
-    a.contact:hover {
-      background: #00ff55;
-      color: #002200;
-      box-shadow: 0 0 25px #00ff55, 0 0 50px #00ff55;
-      transform: translateY(-3px);
-    }
-
-    footer {
-      position: absolute;
-      bottom: 20px;
-      font-size: 0.9em;
-      color: #c0f8ff;
-      z-index: 1;
-      opacity: 0.8;
-    }
   </style>
 </head>
 <body>
-  <h1>Welcome to Leon's Homepage</h1>
-
-  <div class="button-container">
-    <a href="about.html" class="button about">About Me</a>
-    <a href="projects.html" class="button">Projects</a>
-    <a href="contact.html" class="button contact">Contact</a>
-    <a href="https://www.youtube.com/" target="_blank" class="button youtube">YouTube</a>
+  <h1>Contact Leon</h1>
+  <p>Hi! Trying to contact Leon? Here are some ways:</p>
+  <div class="contact-info">
+    Discord user (1): leonvr10<br>
+    Discord user (2): leongaming10
   </div>
 
-  <footer>© 2025 Leon. All rights reserved.</footer>
+  <a href="index.html" class="button">Back to Homepage</a>
 </body>
 </html>
