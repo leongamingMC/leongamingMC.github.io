@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Cool Homepage</title>
+  <title>Leon's Homepage</title>
   <style>
     /* Reset default browser styles */
     * {
@@ -30,15 +30,9 @@
 
     /* Animated gradient background */
     @keyframes gradientShift {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     h1 {
@@ -69,6 +63,19 @@
       overflow: hidden;
       transition: 0.3s;
       backdrop-filter: blur(3px);
+    }
+
+    /* YouTube-specific style */
+    a.youtube {
+      color: #ff4b4b;
+      border-color: #ff4b4b;
+    }
+
+    a.youtube:hover {
+      background: #ff4b4b;
+      color: #fff;
+      box-shadow: 0 0 25px #ff4b4b, 0 0 50px #ff4b4b;
+      transform: translateY(-3px);
     }
 
     a.button::before {
@@ -104,14 +111,16 @@
   </style>
 </head>
 <body>
-  <h1>Welcome to My Cool Homepage</h1>
+  <h1>Welcome to Leon's Homepage</h1>
 
   <div class="button-container">
     <a href="about.html" class="button">About Me</a>
     <a href="projects.html" class="button">Projects</a>
     <a href="contact.html" class="button">Contact</a>
+    <!-- YouTube button -->
+    <a href="https://www.youtube.com/" target="_blank" class="button youtube">YouTube</a>
   </div>
 
-  <footer>© 2025 Your Name. All rights reserved.</footer>
+  <footer>© 2025 Leon. All rights reserved.</footer>
 </body>
 </html>
