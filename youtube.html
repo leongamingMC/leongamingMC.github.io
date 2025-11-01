@@ -15,13 +15,13 @@
       text-align: center;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #ff0000, #ff5555, #ff2222, #cc0000);
+      background: linear-gradient(135deg, #ff0000, #cc0000, #ff2222, #ff5555);
       background-size: 400% 400%;
-      animation: youtubeGradient 10s ease infinite;
+      animation: redGradient 10s ease infinite;
       color: #002233; /* Dark blue text */
     }
 
-    @keyframes youtubeGradient {
+    @keyframes redGradient {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
@@ -38,18 +38,18 @@
       font-size: 1.5em;
       color: #002233; /* Dark blue */
       text-decoration: none;
-      border: 2px solid #ff0000;
+      border: 2px solid #007BFF; /* Blue border */
       padding: 12px 30px;
       border-radius: 50px;
       transition: 0.3s;
-      background: rgba(255, 255, 255, 0.05);
+      background: #5dade2; /* Lighter blue background */
       text-shadow: 0 0 5px #002233;
     }
 
     a.youtube-link:hover {
-      background: #ff0000;
-      color: #ffffff;
-      box-shadow: 0 0 25px #ff0000, 0 0 50px #ff5555;
+      background: #85c1e9; /* Even lighter blue on hover */
+      color: #002233;
+      box-shadow: 0 0 15px #85c1e9, 0 0 25px #5dade2;
       transform: translateY(-3px);
     }
 
@@ -59,17 +59,17 @@
       font-size: 1.2em;
       color: #002233;
       text-decoration: none;
-      border: 2px solid #002233;
+      border: 2px solid #007BFF; /* Blue border */
       border-radius: 50px;
       margin-top: 25px;
       transition: 0.3s;
-      background: rgba(255, 255, 255, 0.05);
+      background: #5dade2; /* Lighter blue background */
     }
 
     a.button:hover {
-      background: #002233;
-      color: #ffffff;
-      box-shadow: 0 0 15px #002233;
+      background: #85c1e9; /* Lighter blue on hover */
+      color: #002233;
+      box-shadow: 0 0 15px #85c1e9;
       transform: translateY(-3px);
     }
   </style>
@@ -84,4 +84,3 @@
   <a href="index.html" class="button">Back to Homepage</a>
 </body>
 </html>
-
