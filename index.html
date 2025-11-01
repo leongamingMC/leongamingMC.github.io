@@ -36,8 +36,8 @@
     }
 
     h1 {
-      font-size: 4em; /* Increased from 3em */
-      margin-bottom: 40px; /* Slightly more space below */
+      font-size: 4em;
+      margin-bottom: 40px;
       color: #00eaff;
       text-shadow: 0 0 20px #00eaff, 0 0 40px #00eaff;
       z-index: 1;
@@ -45,7 +45,7 @@
 
     .button-container {
       display: flex;
-      gap: 25px; /* Slightly more spacing */
+      gap: 25px;
       flex-wrap: wrap;
       justify-content: center;
       z-index: 1;
@@ -55,8 +55,8 @@
     a.button {
       position: relative;
       display: inline-block;
-      padding: 20px 50px; /* Increased from 15px 40px */
-      font-size: 1.4em; /* Increased from 1.2em */
+      padding: 20px 50px;
+      font-size: 1.4em;
       color: #00eaff;
       text-decoration: none;
       border: 2px solid #00eaff;
@@ -88,43 +88,14 @@
       transform: translateY(-3px);
     }
 
-    /* About Me button - dark blue theme */
-    a.about {
-      color: #1a4fff;
-      border-color: #1a4fff;
-    }
+    a.about { color: #1a4fff; border-color: #1a4fff; }
+    a.about:hover { background: #1a4fff; color: #fff; box-shadow: 0 0 25px #1a4fff, 0 0 50px #1a4fff; }
 
-    a.about:hover {
-      background: #1a4fff;
-      color: #fff;
-      box-shadow: 0 0 25px #1a4fff, 0 0 50px #1a4fff;
-    }
+    a.youtube { color: #ff4b4b; border-color: #ff4b4b; }
+    a.youtube:hover { background: #ff0000; color: #fff; box-shadow: 0 0 25px #ff0000, 0 0 50px #ff0000; transform: translateY(-3px); }
 
-    /* YouTube button - red theme */
-    a.youtube {
-      color: #ff4b4b;
-      border-color: #ff4b4b;
-    }
-
-    a.youtube:hover {
-      background: #ff0000;
-      color: #fff;
-      box-shadow: 0 0 25px #ff0000, 0 0 50px #ff0000;
-      transform: translateY(-3px);
-    }
-
-    /* Contact button - neon green theme */
-    a.contact {
-      color: #00ff55;
-      border-color: #00ff55;
-    }
-
-    a.contact:hover {
-      background: #00ff55;
-      color: #002200;
-      box-shadow: 0 0 25px #00ff55, 0 0 50px #00ff55;
-      transform: translateY(-3px);
-    }
+    a.contact { color: #00ff55; border-color: #00ff55; }
+    a.contact:hover { background: #00ff55; color: #002200; box-shadow: 0 0 25px #00ff55, 0 0 50px #00ff55; transform: translateY(-3px); }
 
     footer {
       position: absolute;
@@ -134,9 +105,21 @@
       z-index: 1;
       opacity: 0.8;
     }
+
+    /* Particle canvas */
+    canvas#particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
   </style>
 </head>
 <body>
+  <canvas id="particles"></canvas>
+
   <h1>Welcome to Leon's Homepage</h1>
 
   <div class="button-container">
@@ -147,5 +130,90 @@
   </div>
 
   <footer>© 2025 Leon. All rights reserved.</footer>
+
+  <script>
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particlesArray = [];
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initParticles();
+    });
+
+    class Particle {
+      constructor(x, y, dirX, dirY, size, color){
+        this.x = x;
+        this.y = y;
+        this.dirX = dirX;
+        this.dirY = dirY;
+        this.size = size;
+        this.color = color;
+      }
+
+      draw(){
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+
+      update(){
+        if(this.x + this.size > canvas.width || this.x - this.size < 0) this.dirX = -this.dirX;
+        if(this.y + this.size > canvas.height || this.y - this.size < 0) this.dirY = -this.dirY;
+
+        this.x += this.dirX;
+        this.y += this.dirY;
+
+        this.draw();
+      }
+    }
+
+    function initParticles(){
+      particlesArray = [];
+      let numberOfParticles = (canvas.width * canvas.height) / 12000; // fewer particles for a subtle effect
+      for(let i=0; i<numberOfParticles; i++){
+        let size = Math.random() * 3 + 1;
+        let x = Math.random() * (canvas.width - size*2) + size;
+        let y = Math.random() * (canvas.height - size*2) + size;
+        let dirX = (Math.random() - 0.5) * 0.5; // slower particles
+        let dirY = (Math.random() - 0.5) * 0.5;
+        let color = 'rgba(0,234,255,0.7)'; // neon blue to match gradient
+        particlesArray.push(new Particle(x, y, dirX, dirY, size, color));
+      }
+    }
+
+    function connectParticles(){
+      for(let a = 0; a < particlesArray.length; a++){
+        for(let b = a; b < particlesArray.length; b++){
+          let dx = particlesArray[a].x - particlesArray[b].x;
+          let dy = particlesArray[a].y - particlesArray[b].y;
+          let distance = Math.sqrt(dx*dx + dy*dy);
+          if(distance < 100){
+            ctx.strokeStyle = 'rgba(0,234,255,' + (1 - distance/100) + ')';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animateParticles(){
+      requestAnimationFrame(animateParticles);
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      particlesArray.forEach(p => p.update());
+      connectParticles();
+    }
+
+    initParticles();
+    animateParticles();
+  </script>
 </body>
 </html>
