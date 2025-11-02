@@ -112,6 +112,37 @@
       height: 100%;
       z-index: 0;
     }
+
+    /* Bottom-right credit section */
+    .credit-box {
+      position: absolute;
+      bottom: 25px;
+      right: 25px;
+      text-align: right;
+      font-size: 0.9em;
+      color: #c0f8ff;
+      z-index: 2;
+    }
+
+    /* Neon green button */
+    .credit-btn {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 8px 18px;
+      font-size: 0.9em;
+      color: #00ff55;
+      border: 2px solid #00ff55;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .credit-btn:hover {
+      background: #00ff55;
+      color: #002200;
+      box-shadow: 0 0 15px #00ff55, 0 0 30px #00ff55;
+      transform: translateY(-2px);
+    }
   </style>
 </head>
 <body>
@@ -127,6 +158,12 @@
   </div>
 
   <footer>© 2025 Leon. All rights reserved.</footer>
+
+  <!-- Bottom-right credit + button -->
+  <div class="credit-box">
+    <p>Credit to : @firecatcher303</p>
+    <a href="https://www.youtube.com/@firecatcher_303" target="_blank" class="credit-btn">YouTube</a>
+  </div>
 
   <script>
     const canvas = document.getElementById('particles');
